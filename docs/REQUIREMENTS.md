@@ -7,9 +7,9 @@ Task
 - title
 
 ## Milestone 1: ToDo App Frontend
-	- Setup the project git repository
-	- Install and setup react application using vite
-		- Configure routing
+	✅ Setup the project git repository (DONE)
+	✅ Install and setup react application using vite
+		🚧 Configure routing
 		- Add react hook form
 		- Add yup
 	- As a user I should be able to list all tasks
