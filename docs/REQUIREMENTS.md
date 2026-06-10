@@ -5,13 +5,13 @@ PRD: Store the title of the tasks you work on. Allow to add new, update existing
 
 Task
 - title
-
+🚧
 ## Milestone 1: ToDo App Frontend
 	✅ Setup the project git repository (DONE)
 	✅ Install and setup react application using vite
 		✅ Configure routing
 		✅ Add react hook form
-		🚧 Add yup
+		✅ Add yup
 	- As a user I should be able to list all tasks
 	- As a user I should be able to add new task and see it as soon as I add it
 	- As a user I should be able to edit existing task
