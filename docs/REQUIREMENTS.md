@@ -12,6 +12,7 @@ Task
 		✅ Configure routing
 		✅ Add react hook form
 		✅ Add yup
+        ✅ Clean the react default scaffolding 
 	- As a user I should be able to list all tasks
 	- As a user I should be able to add new task and see it as soon as I add it
 	- As a user I should be able to edit existing task
