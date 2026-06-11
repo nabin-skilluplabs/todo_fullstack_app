@@ -18,17 +18,17 @@ function App() {
     {
       id: 3,
       task: 'Finish the project',
-      isEditing: true,
+      isEditing: false,
     },
     {
       id: 4,
       task: 'Call mom',
-      isEditing: true,
+      isEditing: false,
     },
     {
       id: 5,
       task: 'Read a book',
-      isEditing: true,
+      isEditing: false,
     }
   ]);
 
@@ -66,6 +66,13 @@ function App() {
     setTodoTasks(updatedTasks);
   }
 
+  function deleteTask(task) {
+    const updatedTasks = todoTasks.filter(t => {
+      return t.id !== task.id;
+    });
+    setTodoTasks(updatedTasks);
+  }
+
 
   return (
     <>
@@ -77,7 +84,11 @@ function App() {
         {
           todoTasks.map((task, index) => (<li key={index}>
             {
-              task.isEditing ? (<EditToDoForm handleUpdateTask={handleUpdateTask} task={task} />) : <span onClick={() => currentTask(task)}>{task.task}</span>
+              task.isEditing ? (<EditToDoForm handleUpdateTask={handleUpdateTask} task={task} />) :
+                (<div>
+                  <span onClick={() => currentTask(task)}>{task.task}</span>
+                  {" "}<button onClick={() => deleteTask(task)}>Delete</button>
+                </div>)
             }
           </li>))
         }

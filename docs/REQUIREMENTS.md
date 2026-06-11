@@ -16,7 +16,7 @@ Task
 	✅ As a user I should be able to list all tasks
 	✅ As a user I should be able to add new task and see it as soon as I add it
 	✅ As a user I should be able to edit existing task
-	- As a user I should be able to delete existing task
+	✅ As a user I should be able to delete existing task
 ## Milestone 2: ToDo App Backend
 	- Install and setup express using vite
 		- Prisma (connect to database)
