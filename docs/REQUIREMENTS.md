@@ -18,7 +18,7 @@ Task
 	✅ As a user I should be able to edit existing task
 	✅ As a user I should be able to delete existing task
 ## Milestone 2: ToDo App Backend
-	- Install and setup express using vite
+	✅ Install and setup express using vite
 		- Prisma (connect to database)
 	- Create database schema
 		Task
