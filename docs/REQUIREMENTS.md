@@ -23,7 +23,7 @@ Task
 	✅ Create database schema
 		Task
 	- Create API endpoints
-		- List all tasks
+		✅ List all tasks
 		- Add new task
 		- Update existing task
 		- Delete task
@@ -31,7 +31,7 @@ Task
 	- Configure postman collection
 
 ## Milestone 3: Integration between Frontend and backend
-	- As a user I should be able to get tasks from backend
+	🚧 As a user I should be able to get tasks from backend
 	- As a user when I update existing task it should persist
 	- As a user when I delete existing task it should be permanently deleted
 	- As a user I should be able to add new task that store to the database

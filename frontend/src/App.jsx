@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css'
 import ToDoForm from './components/ToDoForm';
 import EditToDoForm from './components/EditToDoForm';
+import { getTasks } from './actions/taskActions';
 
 function App() {
   const [todoTasks, setTodoTasks] = useState([
@@ -41,6 +42,13 @@ function App() {
         isEditing: false,
       }, ...todoTasks]);
   }
+
+  useEffect(() => {
+    (async () => {
+      const tasks = await getTasks();
+      setTodoTasks(tasks);
+    })();
+  }, []);
 
   function handleUpdateTask(taskToUpdate) {
     console.log("Task updated:", taskToUpdate);
