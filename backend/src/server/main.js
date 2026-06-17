@@ -1,7 +1,6 @@
 import express from "express";
-import ViteExpress from "vite-express";
 import cors from "cors";
-import { getTasks, createTask, getTask, updateTask,deleteTask } from "./dbService.js";
+import { getTasks, createTask, getTask, updateTask, deleteTask } from "./dbService.js";
 
 const app = express();
 
@@ -46,6 +45,10 @@ app.delete("/tasks/:id", async (req, res) => {
   res.json({ message: "Task deleted successfully" });
 });
 
-ViteExpress.listen(app, 3001, () =>
-    console.log("Server is listening on port 3001..."),
-  );
+if (!process.env.VERCEL) {
+  app.listen(3001, () => {
+    console.log("Server is listening on port 3001...");
+  });
+}
+
+export default app;

@@ -11,5 +11,7 @@
       "src": "/(.*)",
       "dest": "src/server/main.js"
     }
-  ]
+  ],
+  "installCommand": "npm install",
+  "buildCommand": "npm run build"
 }
