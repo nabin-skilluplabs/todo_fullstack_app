@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css'
 import ToDoForm from './components/ToDoForm';
 import EditToDoForm from './components/EditToDoForm';
-import { getTasks } from './actions/taskActions';
+import { getTasks, addTask } from './actions/taskActions';
 
 function App() {
   const [todoTasks, setTodoTasks] = useState([
@@ -33,14 +33,11 @@ function App() {
     }
   ]);
 
-  function handleAddTask(newTask) {
+  async function handleAddTask(task) {
+    const newTask = await addTask(task);
     console.log("New task added:", newTask);
     setTodoTasks([
-      {
-        id: todoTasks.length + 1,
-        task: newTask,
-        isEditing: false,
-      }, ...todoTasks]);
+      newTask, ...todoTasks]);
   }
 
   useEffect(() => {

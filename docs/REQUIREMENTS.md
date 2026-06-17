@@ -24,14 +24,15 @@ Task
 		Task
 	- Create API endpoints
 		✅ List all tasks
-		🚧 Add new task
-		- Update existing task
+		✅ Add new task
+		🚧 Update existing task
 		- Delete task
 	- Configure swagger to list all the API endpoints
 	- Configure postman collection
 
 ## Milestone 3: Integration between Frontend and backend
 	✅ As a user I should be able to get tasks from backend
+	✅  As a user when I new task it should save to the database and show in the list
 	- As a user when I update existing task it should persist
 	- As a user when I delete existing task it should be permanently deleted
 	- As a user I should be able to add new task that store to the database
