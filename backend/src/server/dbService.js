@@ -33,4 +33,12 @@ const updateTask = async (id, task) => {
   });
 }
 
-export { getTasks, createTask, getTask, updateTask };
+const deleteTask = async (id) => {
+  return prisma.task.delete({
+    where: {
+      id: id
+    }
+  });
+}
+
+export { getTasks, createTask, getTask, updateTask, deleteTask };

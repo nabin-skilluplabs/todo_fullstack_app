@@ -1,7 +1,7 @@
 import express from "express";
 import ViteExpress from "vite-express";
 import cors from "cors";
-import { getTasks, createTask, getTask, updateTask } from "./dbService.js";
+import { getTasks, createTask, getTask, updateTask,deleteTask } from "./dbService.js";
 
 const app = express();
 
@@ -35,6 +35,17 @@ app.put("/tasks", async (req, res) => {
   const updatedTask = await updateTask(id, task);
   res.json(updatedTask);
 });
+
+app.delete("/tasks/:id", async (req, res) => {
+  const { id } = req.params;
+  const existingTask  = await getTask(parseInt(id));
+  if(!existingTask) {
+    return res.status(404).json({ error: "Task not found" });
+  }
+  await deleteTask(parseInt(id));
+  res.json({ message: "Task deleted successfully" });
+});
+
 
 
 ViteExpress.listen(app, 3001, () =>

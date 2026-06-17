@@ -26,7 +26,7 @@ Task
 		✅ List all tasks
 		✅ Add new task
 		✅ Update existing task
-		🚧 Delete task
+		✅ Delete task
 	- Configure swagger to list all the API endpoints
 	- Configure postman collection
 
