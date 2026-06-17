@@ -34,8 +34,7 @@ Task
 	✅ As a user I should be able to get tasks from backend
 	✅  As a user when I new task it should save to the database and show in the list
 	✅ As a user when I update existing task it should persist
-	- As a user when I delete existing task it should be permanently deleted
-	- As a user I should be able to add new task that store to the database
+	✅ As a user when I delete existing task it should be permanently deleted
 ## Milesotne 4: Deploy the app
 	- Create pipeline to build and deploy task to AWS
 	- Create infra to host frontend in S3

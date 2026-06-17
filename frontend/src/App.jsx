@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css'
 import ToDoForm from './components/ToDoForm';
 import EditToDoForm from './components/EditToDoForm';
-import { getTasks, addTask } from './actions/taskActions';
+import { getTasks, addTask, deleteTask } from './actions/taskActions';
 
 function App() {
   const [todoTasks, setTodoTasks] = useState([
@@ -71,7 +71,9 @@ function App() {
     setTodoTasks(updatedTasks);
   }
 
-  function deleteTask(task) {
+  async function deleteCurrentTask(task) {
+
+    await deleteTask(task.id);
     const updatedTasks = todoTasks.filter(t => {
       return t.id !== task.id;
     });
@@ -92,7 +94,7 @@ function App() {
               task.isEditing ? (<EditToDoForm handleUpdateTask={handleUpdateTask} task={task} />) :
                 (<div>
                   <span onClick={() => currentTask(task)}>{task.task}</span>
-                  {" "}<button onClick={() => deleteTask(task)}>Delete</button>
+                  {" "}<button onClick={() => deleteCurrentTask(task)}>Delete</button>
                 </div>)
             }
           </li>))

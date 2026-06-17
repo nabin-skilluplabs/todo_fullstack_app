@@ -28,7 +28,8 @@ const updateTask = async (id, task) => {
       id: id
     },
     data: {
-      task: task
+      task: task,
+      isEditing: false,
     }
   });
 }

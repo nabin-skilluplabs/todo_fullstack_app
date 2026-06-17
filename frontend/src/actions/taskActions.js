@@ -30,3 +30,13 @@ export async function updateTask(id, task) {
    const updatedTask = await response.json();
    return updatedTask;
 }
+
+export async function deleteTask(id) {
+   const response =  await fetch(`${API_URL}/tasks/${id}`,{
+      method: 'DELETE',
+      headers: {
+         'Content-Type': 'application/json'
+      }
+   });
+   await response.json();
+}
