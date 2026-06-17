@@ -13,4 +13,24 @@ const createTask = async (task) => {
   })
 }
 
-export { getTasks, createTask };
+const getTask = async(id) => {
+  return prisma.task.findUnique({
+    where: {
+      id: id,
+    }
+  });
+}
+
+const updateTask = async (id, task) => {
+  console.log({task, id});
+  return prisma.task.update({
+    where: {
+      id: id
+    },
+    data: {
+      task: task
+    }
+  });
+}
+
+export { getTasks, createTask, getTask, updateTask };
