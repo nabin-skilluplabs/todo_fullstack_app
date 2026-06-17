@@ -45,10 +45,7 @@ app.delete("/tasks/:id", async (req, res) => {
   await deleteTask(parseInt(id));
   res.json({ message: "Task deleted successfully" });
 });
-if (!process.env.VERCEL) {
-  ViteExpress.listen(app, 3001, () =>
+
+ViteExpress.listen(app, 3001, () =>
     console.log("Server is listening on port 3001..."),
   );
-}
-
-export default app;
